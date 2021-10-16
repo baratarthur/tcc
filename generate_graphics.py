@@ -9,7 +9,7 @@ def generate_graphic_with_mean(column, key, dirname, filename):
     line_mean, = plt.plot(range(len(column)), [mean for _ in range(len(column))], 'y')
     line, = plt.plot(range(len(column)), column, 'b')
 
-    plt.title(f"Eixo {key} do arquivo {filename.replace('.csv', '')}")
+    plt.title(f"Eixo {key} de {filename.replace('.csv', '').replace('_', ' ')}")
     plt.legend([line_mean, line], ["mean", "data"])
     
     plt.xlabel("time [s]")
