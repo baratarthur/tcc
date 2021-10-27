@@ -44,6 +44,15 @@ print("Media: ", dados['z'].mean())
 print("variancia: ", dados['z'].var())
 locale = f"graficos/soltos/{dirname}/{filename.replace('.csv', '')}"
 
+if dirname == "novas_leituras":
+    if "Eptg" in filename:
+        print("variancia parado:\n", dados[55:100]["z"].var())
+        dados = dados[:260]
+
+if dirname == "quebra_mola":
+    if "40km" in filename:
+        dados = dados[25:45]
+
 if dirname == "pistao_sul":
     if "2" in filename:
         print("variancia parado:\n", dados[55:100]["z"].var())
